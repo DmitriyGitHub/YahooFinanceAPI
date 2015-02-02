@@ -1,6 +1,6 @@
 {
   "name": "dmitriy-luch/yii2-yahoo-finance-api",
-  "description": "PHP library for Yahoo Finance API with the changes according to Yii2 requirements.",
+  "description": "Yii2 PHP library for Yahoo Finance API.",
   "keywords": ["yii2", "Yahoo", "Finance", "API"],
   "homepage": "https://github.com/dmitriy-luch/yii2-yahoo-finance-api",
   "type": "yii2-extension",
