@@ -67,7 +67,6 @@ class YahooFinanceAPI
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
             $resp = curl_exec($ch);
             $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            print_r($resp);
             curl_close($ch);
 
             // parse response
