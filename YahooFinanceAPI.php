@@ -1,6 +1,6 @@
 <?php
 
-namespace DmitriyGitHub\Yii2YahooFinanceAPI;
+namespace dmitriyLuch\Yii2YahooFinanceAPI;
 
 class YahooFinanceAPI
 {
