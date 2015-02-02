@@ -37,7 +37,7 @@ class YahooFinanceAPI
 
         // parse response
         if (!empty($fields)) {
-            $xml = new SimpleXMLElement($resp);
+            $xml = new \SimpleXMLElement($resp);
             $data = array();
             $row = array();
             $time = time();
