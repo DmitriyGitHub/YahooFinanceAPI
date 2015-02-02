@@ -20,6 +20,8 @@ class YahooFinanceAPI
     const LAST_TRADE_PRICE_ONLY = 'LastTradePriceOnly';
     const LAST_TRADE_TIME = 'LastTradeTime';
     const LAST_TRADE_DATE = 'LastTradeDate';
+    const OPEN = 'Open';
+    const PREV_CLOSE = 'PrevClose';
 
     public function getDefaultFields(){
         return [
@@ -37,6 +39,8 @@ class YahooFinanceAPI
             self::LAST_TRADE_PRICE_ONLY,
             self::LAST_TRADE_TIME,
             self::LAST_TRADE_DATE,
+            self::OPEN,
+            self::PREV_CLOSE,
         ];
     }
 
