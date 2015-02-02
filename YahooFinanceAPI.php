@@ -54,7 +54,7 @@ class YahooFinanceAPI
 
         // set fields
         if ($fields===true || empty($fields)) {
-            $fields = $this->defaultFields;
+            $fields = $this->getDefaultFields();
         }
 
         // make request
