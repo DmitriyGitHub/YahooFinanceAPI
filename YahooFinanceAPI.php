@@ -57,30 +57,36 @@ class YahooFinanceAPI
             $fields = $this->getDefaultFields();
         }
 
-        // make request
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        $resp = curl_exec($ch);
-        $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch); 
+        for($i=0; $i<10; $i++){
+            // make request
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+            $resp = curl_exec($ch);
+            $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            print_r($resp);
+            curl_close($ch);
 
-        // parse response
-        if (!empty($fields)) {
-            $xml = new \SimpleXMLElement($resp);
-            $data = array();
-            $row = array();
-            $time = time();
-            if(is_object($xml)){
-                foreach($xml->results->quote as $quote){
-                    $row = array();
-                    foreach ($fields as $field) {
-                        $row[$field] = (string) $quote->$field;
+            // parse response
+            if (!empty($fields)) {
+                $xml = new \SimpleXMLElement($resp);
+                $data = array();
+                $row = array();
+                $time = time();
+                if(is_object($xml)){
+                    foreach($xml->results->quote as $quote){
+                        $row = array();
+                        foreach ($fields as $field) {
+                            $row[$field] = (string) $quote->$field;
+                        }
+                        $data[] = $row;
                     }
-                    $data[] = $row;
                 }
+            } else {
+                $data = $resp;
             }
-        } else {
-            $data = $resp;
+            if(is_array($data) && count($data) > 0){
+                break;
+            }
         }
 
         return $data;
