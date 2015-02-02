@@ -6,6 +6,40 @@ class YahooFinanceAPI
 {
     public $api_url = 'http://query.yahooapis.com/v1/public/yql';
 
+    const SYMBOL = 'Symbol';
+    const NAME = 'Name';
+    const CHANGE = 'Change';
+    const CHANGE_REALTIME = 'ChangeRealtime';
+    const PER_RATIO = 'PERatio';
+    const PER_RATIO_REALTIME = 'PERatioRealtime';
+    const VOLUME = 'Volume';
+    const PERCENT_CHANGE = 'PercentChange';
+    const DIVIDEND_YIELD = 'DividendYield';
+    const LAST_TRADE_REALTIME_WITH_TIME = 'LastTradeRealtimeWithTime';
+    const LAST_TRADE_WITH_TIME = 'LastTradeWithTime';
+    const LAST_TRADE_PRICE_ONLY = 'LastTradePriceOnly';
+    const LAST_TRADE_TIME = 'LastTradeTime';
+    const LAST_TRADE_DATE = 'LastTradeDate';
+
+    public function getDefaultFields(){
+        return [
+            self::SYMBOL,
+            self::NAME,
+            self::CHANGE,
+            self::CHANGE_REALTIME,
+            self::PER_RATIO,
+            self::PER_RATIO_REALTIME,
+            self::VOLUME,
+            self::PERCENT_CHANGE,
+            self::DIVIDEND_YIELD,
+            self::LAST_TRADE_REALTIME_WITH_TIME,
+            self::LAST_TRADE_WITH_TIME,
+            self::LAST_TRADE_PRICE_ONLY,
+            self::LAST_TRADE_TIME,
+            self::LAST_TRADE_DATE,
+        ];
+    }
+
     /**
      * @param array $tickers The array of ticker symbols
      * @param array|bool $fields Array of fields to get from the returned XML
@@ -20,12 +54,7 @@ class YahooFinanceAPI
 
         // set fields
         if ($fields===true || empty($fields)) {
-            $fields = array(
-                    'Symbol','Name','Change','ChangeRealtime','PERatio',
-                    'PERatioRealtime','Volume','PercentChange','DividendYield',
-                    'LastTradeRealtimeWithTime','LastTradeWithTime','LastTradePriceOnly','LastTradeTime',
-                    'LastTradeDate'
-                    );
+            $fields = $this->defaultFields;
         }
 
         // make request
