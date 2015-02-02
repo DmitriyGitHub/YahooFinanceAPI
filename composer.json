@@ -1,0 +1,21 @@
+{
+  "name": "DmitriyGitHub/Yii2YahooFinanceAPI",
+  "description": "PHP library for Yahoo Finance API with the changes according to Yii2 requirements.",
+  "keywords": ["yii2", "Yahoo", "Finance", "API"],
+  "homepage": "https://github.com/DmitriyGitHub/Yii2YahooFinanceAPI",
+  "type": "yii2-extension",
+  "license": "BSD 3-Clause",
+  "authors": [
+    {
+      "name": "Dmitriy Raschepkin",
+      "email": "dmitriy.raschepkin@gmail.com",
+      "homepage": "https://github.com/DmitriyGitHub"
+    }
+  ],
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "DmitriyGitHub\\Yii2YahooFinanceAPI\\": ""
+    }
+  }
+}

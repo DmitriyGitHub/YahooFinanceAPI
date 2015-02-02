@@ -1,5 +1,7 @@
 <?php
 
+namespace DmitriyGitHub\Yii2YahooFinanceAPI;
+
 class YahooFinanceAPI
 {
     public $api_url = 'http://query.yahooapis.com/v1/public/yql';
